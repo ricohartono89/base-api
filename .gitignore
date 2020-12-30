@@ -13,3 +13,10 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Binary
+base-api
+
+# env
+*.env
+*_env.sh
