@@ -2,9 +2,11 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/ricohartono89/base-api/db"
@@ -41,6 +43,10 @@ func newServer(router *way.Router, dbi db.DatabaseInterface, redis db.RedisInter
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
+	if err := run(); err != nil {
+		_, _ = fmt.Fprintf(os.Stderr, "%s\n", err)
+		os.Exit(1)
+	}
 }
 
 func run() error {

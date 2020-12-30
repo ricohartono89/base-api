@@ -18,5 +18,5 @@
 base-api
 
 # env
-*.env
-*_env.sh
+#*.env
+#*_env.sh
